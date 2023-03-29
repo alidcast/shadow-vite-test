@@ -1,0 +1,22 @@
+{:deps true
+
+ :target-defaults
+ {:browser
+  {:js-options
+   {:extensions [".web.js" ".js" ".json"]
+    :resolve {"react-native" {:target :npm
+                              :require "react-native-web"}}}}}
+
+ :builds
+ {:web
+  {:target :esm
+   :output-dir "dist/js"
+  ;;  :asset-path "/js"
+   :modules {:app {:exports {App demo.web.app/App}}}
+   :js-options {:js-provider :import}
+   :compiler-options {:reader-features #{:web}}}}}
+
+
+
+
+
